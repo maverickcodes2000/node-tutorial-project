@@ -1,0 +1,5 @@
+const {john,peter}= require('./02-names')
+const sayhi =  require('./03-utils')
+sayhi(john)
+sayhi(peter)
+require('./05-mindgrenade')

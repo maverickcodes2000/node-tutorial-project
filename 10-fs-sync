@@ -1,0 +1,26 @@
+/* this is direct destructuring approach */
+const {readFileSync,writeFileSync} = require('fs')
+
+/* dot method approach
+const fileSystem=require('fs')
+  fileDystem.readFileSync or fileSystem.writeFileSync */
+
+const first=readFileSync('./content/first-text.txt', 'utf8')
+const second=readFileSync('./content/second-text.txt', 'utf8')
+
+console.log(first,second)
+
+/* 
+this creates a new file whose name is the first parameter 
+if the file doesnt already exist and overrides or overwrites the file 
+with the value of the second parameter if the file already exists */
+ 
+
+writeFileSync('./content/result.text', `this is the result: ${first},clear
+ ${second}`)
+
+/* if you want to append to the file, u add a third a third parameter
+{flag:'a'} */
+
+writeFileSync('./content/result.text', `this is the result: ${first},clear
+ ${second}`, {flag:'a'} )
